@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding = "5dp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_centerVertical="true"
+        android:textSize="20sp"
+        android:padding="2dp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:id="@+id/contactName"/>
+
+    <TextView
+        android:id="@+id/opdirnumber123"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OPD/IR Number:"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:padding="2dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_below="@+id/contactName"
+        />
+
+    <TextView
+        android:id="@+id/opdirnumber"
+        android:layout_width="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:padding="2dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/opdirnumber123"
+        android:layout_below="@+id/contactName"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"/>
+
+    <TextView
+        android:id="@+id/opdwardnumber123"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OPD/Ward Number:"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:layout_toRightOf="@+id/opdirnumber"
+        android:padding="2dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/contactName"
+        />
+
+
+    <TextView
+        android:id="@+id/opdwardnumber"
+        android:layout_width="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:padding="2dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contactName"
+        android:layout_toRightOf="@+id/opdwardnumber123"/>
+
+    <ProgressBar
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:id = "@+id/contactProgressBar"
+        android:visibility="gone"/>
+
+</RelativeLayout>

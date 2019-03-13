@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding = "5dp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_centerVertical="true"
+        android:textSize="20sp"
+        android:padding="2dp"
+        android:textColor="#000000"
+        android:id="@+id/contactName"/>
+
+    <!--<TextView
+        android:id="@+id/opdirnumber"
+        android:layout_width="100dp"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:padding="2dp"
+        android:layout_alignParentStart="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contactName"
+        android:layout_marginStart="20dp"/>
+
+
+    <TextView
+        android:id="@+id/opdwardnumber"
+        android:layout_width="100dp"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:padding="2dp"
+        android:layout_marginStart="10dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contactName"
+        android:layout_toRightOf="@+id/opdirnumber"/> -->
+    <ProgressBar
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:id = "@+id/contactProgressBar"
+        android:visibility="gone"/>
+
+</RelativeLayout>
