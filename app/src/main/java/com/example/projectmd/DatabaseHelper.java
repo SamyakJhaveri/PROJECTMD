@@ -50,7 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL1, contact.getName());
         contentValues.put(COL2, contact.getOpdirnumber());
-        contentValues.put(COL3, contact.getDevice());
+        contentValues.put(COL3, contact.getForm());
         contentValues.put(COL4, contact.getOpdwardnumber());
         //contentValues.put(COL5, contact.getProfileImage());
 
@@ -88,7 +88,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL1, contact.getName());
         contentValues.put(COL2, contact.getOpdirnumber());
-        contentValues.put(COL3, contact.getDevice());
+        contentValues.put(COL3, contact.getForm());
         contentValues.put(COL4, contact.getOpdwardnumber());
         //contentValues.put(COL5, contact.getProfileImage());
 

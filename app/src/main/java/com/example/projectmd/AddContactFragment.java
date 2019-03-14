@@ -1,5 +1,6 @@
 package com.example.projectmd;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -27,7 +28,7 @@ public class AddContactFragment extends Fragment {
     //private Contact mContact;
     private EditText mOPDIRNumber, mName, mOPDWardNumber;
     //private CircleImageView mContactImage;
-    private Spinner mSelectDevice;
+    private Spinner mSelectForm;
     private Toolbar toolbar;
    //private String mSelectedImagePath;
     private int mPreviousKeyStroke;
@@ -35,12 +36,23 @@ public class AddContactFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        String customFont = "GoogleSans-Regular.ttf";
+        Typeface typeface = Typeface.createFromAsset(getActivity().getAssets(), customFont);
+
+
         View view = inflater.inflate(R.layout.fragment_addcontact, container, false);
         mOPDIRNumber = (EditText) view.findViewById(R.id.etPatientOPDIRNumber);
         mName = (EditText) view.findViewById(R.id.etContactName);
         mOPDWardNumber = (EditText) view.findViewById(R.id.etPatientOPDWardNumber);
         //mContactImage = (CircleImageView) view.findViewById(R.id.contactImage);
-        mSelectDevice = (Spinner) view.findViewById(R.id.selectDevice);
+        mSelectForm = (Spinner) view.findViewById(R.id.selectForm);
+
+        mOPDIRNumber.setTypeface(typeface);
+        mName.setTypeface(typeface);
+        mOPDWardNumber.setTypeface(typeface);
+
+
         toolbar = (Toolbar) view.findViewById(R.id.editContactToolbar);
         Log.d(TAG, "onCreateView: Started.");
 
@@ -51,6 +63,7 @@ public class AddContactFragment extends Fragment {
 
         //set the heading the for the toolbar
         TextView heading = (TextView) view.findViewById(R.id.textContactToolbar);
+        heading.setTypeface(typeface);
         heading.setText(getString(R.string.add_patient));
 
         //required for setting up the toolbar
@@ -119,7 +132,7 @@ public class AddContactFragment extends Fragment {
                     Contact contact = new Contact(
                             mName.getText().toString(),
                             mOPDIRNumber.getText().toString(),
-                            mSelectDevice.getSelectedItem().toString(),
+                            mSelectForm.getSelectedItem().toString(),
                             mOPDWardNumber.getText().toString());
                     if(databaseHelper.addContact(contact))
                     {

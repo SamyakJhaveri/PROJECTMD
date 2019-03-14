@@ -4,6 +4,7 @@ package com.example.projectmd;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
@@ -25,6 +26,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.projectmd.Utils.ContactListAdapter;
@@ -78,6 +80,7 @@ public class ViewContactsFragment extends Fragment {
     private ContactListAdapter adapter;
     private ListView contactsList;
     private EditText mSearchContacts;
+    private TextView tp;//titlepatient
 
     @Nullable
     @Override
@@ -86,11 +89,16 @@ public class ViewContactsFragment extends Fragment {
 
         toolbar2 = (Toolbar)view.findViewById(R.id.toolbar2);
 
+        String customFont = "GoogleSans-Regular.ttf";
+        Typeface typeface = Typeface.createFromAsset(getActivity().getAssets(), customFont);
 
         viewContactsBar = (AppBarLayout) view.findViewById(R.id.viewContactsToolbar);
         searchBar = (AppBarLayout) view.findViewById(R.id.searchToolbar);
         contactsList = (ListView) view.findViewById(R.id.contactsList);
         mSearchContacts = (EditText) view.findViewById(R.id.etSearchContacts);
+        mSearchContacts.setTypeface(typeface);
+        tp = (TextView)view.findViewById(R.id.titlepatient);
+        tp.setTypeface(typeface);
 
         //required for setting up the toolbar
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar2);
@@ -191,7 +199,7 @@ public class ViewContactsFragment extends Fragment {
             contacts.add(new Contact(
                     cursor.getString(1),//name
                     cursor.getString(2),//opdirnumber
-                    cursor.getString(3),//device
+                    cursor.getString(3),//form
                     cursor.getString(4)//opdwardnumber
             ));
         }

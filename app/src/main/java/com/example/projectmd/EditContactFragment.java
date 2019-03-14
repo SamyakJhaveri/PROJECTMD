@@ -1,6 +1,7 @@
 package com.example.projectmd;
 
 import android.database.Cursor;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -52,7 +53,7 @@ public class EditContactFragment extends Fragment {
     private Contact mContact;
     private EditText mOPDIRNumber, mName, mOPDWardNumber;
    // private CircleImageView mContactImage;
-    private Spinner mSelectDevice;
+    private Spinner mSelectForm;
     private Toolbar toolbar;
    // private String mSelectedImagePath;
     private int mPreviousKeyStroke;
@@ -61,11 +62,20 @@ public class EditContactFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_editcontact, container, false);
+        String customFont = "GoogleSans-Regular.ttf";
+        Typeface typeface = Typeface.createFromAsset(getActivity().getAssets(), customFont);
+
+
         mOPDIRNumber = (EditText) view.findViewById(R.id.etPatientOPDIRNumber);
         mName = (EditText) view.findViewById(R.id.etContactName);
         mOPDWardNumber = (EditText) view.findViewById(R.id.etPatientOPDWardNumber);
+
+        mOPDIRNumber.setTypeface(typeface);
+        mName.setTypeface(typeface);
+        mOPDWardNumber.setTypeface(typeface);
+
         ///mContactImage = (CircleImageView) view.findViewById(R.id.contactImage);
-        mSelectDevice = (Spinner) view.findViewById(R.id.selectDevice);
+        mSelectForm = (Spinner) view.findViewById(R.id.selectForm);
         toolbar = (Toolbar) view.findViewById(R.id.editContactToolbar);
         Log.d(TAG, "onCreateView: Started.");
 
@@ -122,7 +132,7 @@ public class EditContactFragment extends Fragment {
                         }*/
                         mContact.setName(mName.getText().toString());
                         mContact.setOpdirnumber(mOPDIRNumber.getText().toString());
-                        mContact.setDevice(mSelectDevice.getSelectedItem().toString());
+                        mContact.setForm(mSelectForm.getSelectedItem().toString());
                         mContact.setOpdwardnumber(mOPDWardNumber.getText().toString());
 
                         databaseHelper.updateContact(mContact, contactID);
@@ -179,13 +189,13 @@ public class EditContactFragment extends Fragment {
         mOPDWardNumber.setText(mContact.getOpdwardnumber());
         //UniversalImageLoader.setImage(mContact.getProfileImage(), mContactImage, null, "");
 
-        //Setting the selected device to the spinner
+        //Setting the selected form to the spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
-                R.array.device_options, android.R.layout.simple_spinner_item);
+                R.array.form_options, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mSelectDevice.setAdapter(adapter);
-        int position = adapter.getPosition(mContact.getDevice());
-        mSelectDevice.setSelection(position);
+        mSelectForm.setAdapter(adapter);
+        int position = adapter.getPosition(mContact.getForm());
+        mSelectForm.setSelection(position);
     }
 
 

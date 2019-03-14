@@ -2,6 +2,7 @@ package com.example.projectmd;
 
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,6 +23,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     ProgressBar progressBar;
     EditText editTextEmail, editTextPassword;
+    TextView tvln;//textViewLogin
 
     private FirebaseAuth mAuth;
 
@@ -29,8 +32,15 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        String customFont = "GoogleSans-Regular.ttf";
+        Typeface typeface = Typeface.createFromAsset(getAssets(), customFont);
+
+        tvln = (TextView)findViewById(R.id.textViewLogin);
+        tvln.setTypeface(typeface);
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
+        editTextEmail.setTypeface(typeface);
+        editTextPassword.setTypeface(typeface);
         progressBar = (ProgressBar) findViewById(R.id.progressbar);
 
         mAuth = FirebaseAuth.getInstance();

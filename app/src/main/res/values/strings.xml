@@ -64,7 +64,7 @@
     <string name="title_activity_start_here">StartHereActivity</string>
     <string name="action_settings">Settings</string>
 
-    <string-array name="device_options">
+    <string-array name="form_options">
         <item>Mobile</item>
         <item>Home</item>
         <item>Work</item>

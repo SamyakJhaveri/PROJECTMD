@@ -6,14 +6,14 @@ import android.os.Parcelable;
 public class Contact implements Parcelable {
     private String name;
     private String opdirnumber;
-    private String device;
+    private String form;
     private String opdwardnumber;
    // private  String profileImage; //file://document/images/image.png
 
-    public Contact(String name, String opdirnumber, String device, String opdwardnumber) {
+    public Contact(String name, String opdirnumber, String form, String opdwardnumber) {
         this.name = name;
         this.opdirnumber = opdirnumber;
-        this.device = device;
+        this.form = form;
         this.opdwardnumber = opdwardnumber;
        // this.profileImage = profileImage;
     }
@@ -21,7 +21,7 @@ public class Contact implements Parcelable {
     protected Contact(Parcel in) {
         name = in.readString();
         opdirnumber = in.readString();
-        device = in.readString();
+        form = in.readString();
         opdwardnumber = in.readString();
         //profileImage = in.readString();
     }
@@ -54,12 +54,12 @@ public class Contact implements Parcelable {
         this.opdirnumber = opdirnumber;
     }
 
-    public String getDevice() {
-        return device;
+    public String getForm() {
+        return form;
     }
 
-    public void setDevice(String device) {
-        this.device = device;
+    public void setForm(String form) {
+        this.form = form;
     }
 
     public String getOpdwardnumber() {
@@ -83,7 +83,7 @@ public class Contact implements Parcelable {
         return "Contact{" +
                 "name='" + name + '\'' +
                 ", opdirnumber='" + opdirnumber + '\'' +
-                ", device='" + device + '\'' +
+                ", form='" + form + '\'' +
                 ", opdwardnumber='" + opdwardnumber + '\'' +
                 '}';
     }
@@ -97,7 +97,7 @@ public class Contact implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
         dest.writeString(opdirnumber);
-        dest.writeString(device);
+        dest.writeString(form);
         dest.writeString(opdwardnumber);
         //dest.writeString(profileImage);
     }

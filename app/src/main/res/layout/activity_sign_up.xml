@@ -23,22 +23,22 @@
                 android:id="@+id/logo"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_marginStart="140dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginHorizontal="130dp"
+                android:layout_marginTop="40dp"
                 android:src="@drawable/ez_logo_round" />
 
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:animateLayoutChanges="true">
 
                 <EditText
                     android:id="@+id/editTextEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/logo"
-                    android:layout_alignParentStart="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="1dp"
@@ -71,6 +71,7 @@
                     android:background="@color/white"
                     android:backgroundTint="@color/white"
                     android:hint="Password"
+                    android:layout_centerHorizontal="true"
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:padding="10dp"
@@ -87,6 +88,8 @@
                 android:layout_marginRight="20dp"
                 android:duplicateParentState="false"
                 android:padding="4dp"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/roboto_medium"
                 android:text="Sign Up with Email"
                 android:background = "@drawable/buttonshape"
                 android:textColor="@color/white"
@@ -98,6 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:padding="15dp"
+                android:layout_centerHorizontal="true"
                 android:text="Already have an account?  Log In"
                 android:textAlignment="center"
                 android:textColor="@android:color/black" />

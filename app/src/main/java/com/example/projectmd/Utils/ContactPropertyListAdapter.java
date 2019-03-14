@@ -2,6 +2,7 @@ package com.example.projectmd.Utils;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
@@ -64,6 +65,8 @@ public class ContactPropertyListAdapter extends ArrayAdapter<String> {
         if(convertView == null){
             convertView = mInflater.inflate(layoutResource, parent, false);
             holder = new ViewHolder();
+
+
 
             //---------------------------Stuff to change--------------------------------------------
             holder.property = (TextView) convertView.findViewById(R.id.tvMiddleCardView);

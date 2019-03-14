@@ -1,6 +1,7 @@
 package com.example.projectmd;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -39,12 +41,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private FirebaseAuth.AuthStateListener mAuthListener;
     EditText editTextEmail, editTextPassword;
     ProgressBar progressBar;
+    TextView tvsu;//textViewSignup
+    TextView ot;//ortext
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        String customFont = "GoogleSans-Regular.ttf";
+        Typeface typeface = Typeface.createFromAsset(getAssets(), customFont);
+        tvsu = (TextView)findViewById(R.id.textViewSignup);
+        tvsu.setTypeface(typeface);
+        ot = (TextView)findViewById(R.id.ortext);
+        ot.setTypeface(typeface);
 
         //For Google Sign In
         signIn = (SignInButton) findViewById(R.id.sign_in_button);
@@ -53,6 +64,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
+        editTextEmail.setTypeface(typeface);
+        editTextPassword.setTypeface(typeface);
         progressBar = (ProgressBar) findViewById(R.id.progressbar);
 
         // Configure sign-in to request the user's ID, email address, and basic
