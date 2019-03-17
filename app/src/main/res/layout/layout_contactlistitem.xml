@@ -53,6 +53,10 @@
         android:layout_height="wrap_content"
         android:text="OPD/Ward Number:"
         android:gravity="center"
+
+
+
+
         android:textColor="@color/black"
         android:textSize="14sp"
         android:layout_toRightOf="@+id/opdirnumber"

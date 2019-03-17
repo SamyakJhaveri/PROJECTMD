@@ -4,8 +4,8 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimaryDark">#3949AB</item>
-        <item name="colorAccent">#00B0FF</item>
-        <item name="colorPrimary">#3F51B5</item>
+        <item name="colorAccent">#FF9933</item>
+        <item name="colorPrimary">#4285F4</item>
         <item name="colorButtonNormal">@color/c1</item>
         <item name="android:colorControlHighlight">@color/c1</item>
         <item name="android:windowLightStatusBar">true</item>
@@ -25,11 +25,11 @@
     <!-- Base application theme. -->
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#3F51B5</item>
+        <item name="colorPrimary">#4285F4</item>
         <!-- Light Indigo -->
         <item name="colorPrimaryDark">#3949AB</item>
         <!-- Dark Indigo -->
-        <item name="colorAccent">#00B0FF</item>
+        <item name="colorAccent">#FF9933</item>
         <!-- Blue -->
     </style>
 
@@ -40,21 +40,21 @@
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#3F51B5</item>
+        <item name="colorPrimary">#4285F4</item>
         <!-- Light Indigo -->
         <item name="colorPrimaryDark">#3949AB</item>
         <!-- Dark Indigo -->
-        <item name="colorAccent">#00B0FF</item>
+        <item name="colorAccent">#FF9933</item>
         <!-- Blue -->
     </style>
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#3F51B5</item>
+        <item name="colorPrimary">#4285F4</item>
         <!-- Light Indigo -->
         <item name="colorPrimaryDark">#3949AB</item>
         <!-- Dark Indigo -->
-        <item name="colorAccent">#00B0FF</item>
+        <item name="colorAccent">#FF9933</item>
         <!-- Blue -->
     </style>
 
@@ -70,6 +70,18 @@
     <style name="AppTheme.Slide">
         <item name="android:windowEnterAnimation">@anim/slide_up</item>
         <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+
+    <!-- Custom theme that will be used by the document reader -->
+    <style name="CustomAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#4285F4</item>
+        <item name="colorPrimaryDark">@color/app_color_primary_dark_day</item>
+        <item name="colorAccent">#FF9933</item>
+        <!-- Action bar -->
+        <item name="actionModeBackground">?attr/colorPrimary</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
 </resources>

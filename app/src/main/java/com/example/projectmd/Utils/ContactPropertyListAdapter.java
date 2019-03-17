@@ -14,10 +14,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.projectmd.MainActivity;
 import com.example.projectmd.R;
 import com.example.projectmd.StartHereActivity;
+import com.pdftron.pdf.controls.DocumentActivity;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -86,64 +90,37 @@ public class ContactPropertyListAdapter extends ArrayAdapter<String> {
 
         //check if it's an email or a phone number
         //email
-        if(property.contains("@")){
-            holder.leftIcon.setImageResource(mContext.getResources().getIdentifier("@drawable/ic_email", null, mContext.getPackageName()));
-            holder.leftIcon.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.d(TAG, "onClick: opening email.");
-                    Intent emailIntent = new Intent(Intent.ACTION_SEND);
-                    emailIntent.setType("plain/text");
-                    emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {property});
-                    mContext.startActivity(emailIntent);
-
-                    /* optional settings for sending email
-                    String email = property;
-                    String subject = "Patient's Data";
-                    String body = "body...";
-                    String uriText = "mailto: + Uri.encode(email) + "?subject=" + Uri.encode(subject) +
-                    "&body=" + Uri.encode(body);
-                    Uri uri = Uri.parse(uriText);
-                    emailIntent.setData(uri);
-                    mContext.startActivitY(emailIntent);*/
-                }
-            });
-        }
-        else if((property.length() != 0)){
+       if((property.length() != 0)){
             //Phone call
-            holder.leftIcon.setImageResource(mContext.getResources().getIdentifier("@drawable/ic_phone", null, mContext.getPackageName()));
+            holder.leftIcon.setImageResource(mContext.getResources().getIdentifier("@drawable/ic_view", null, mContext.getPackageName()));
             holder.leftIcon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(((StartHereActivity)mContext).checkPermission(Init.PHONE_PERMISSIONS)){
-                        Log.d(TAG, "onClick: initiating phone call...");
-                        Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.fromParts("tel", property, null));
-                        mContext.startActivity(callIntent);
-                    }else{
-                        ((StartHereActivity)mContext).verifyPermissions(Init.PHONE_PERMISSIONS);
-                    }
-
-
-                }
+                    Log.d(TAG, "onClick: Opening form");
+                    Toast.makeText(getContext(), "Opening Form", Toast.LENGTH_SHORT).show();
+               }
             });
 
             //setup the icon for sending text messages
-            holder.rightIcon.setImageResource(mContext.getResources().getIdentifier("@drawable/ic_message", null, mContext.getPackageName()));
+            holder.rightIcon.setImageResource(mContext.getResources().getIdentifier("@drawable/ic_add", null, mContext.getPackageName()));
             holder.rightIcon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.d(TAG, "onClick: initiating text message....");
+                    Log.d(TAG, "onClick: Adding a new form");
+                    Toast.makeText(getContext(), "Adding new form", Toast.LENGTH_SHORT).show();
+                    // Open our sample document in the 'res/raw' resource folder
+                    if (property.equalsIgnoreCase("Request Form for Lab Investigations(HISTOPATHOLOGY)")) {
+                        DocumentActivity.openDocument(getContext(), R.raw.request_form_for_lab_investigations_histopathology);
+                        //finish();
+                    }
+                    else{
+                        Toast.makeText(getContext(), "Form not available yet :(", Toast.LENGTH_SHORT).show();
 
-                    //The number that we want to send SMS
-                    Intent smsIntent = new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms", property, null));
-                    mContext.startActivity(smsIntent);
+                    }
                 }
             });
         }
-
-
         //--------------------------------------------------------------------------------------
-
         return convertView;
     }
 }

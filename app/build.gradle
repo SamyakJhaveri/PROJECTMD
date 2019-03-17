@@ -11,6 +11,14 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        manifestPlaceholders = [pdftronLicenseKey:PDFTRON_LICENSE_KEY]
+    }
+    configurations.all {
+        resolutionStrategy.force "com.android.support:appcompat-v7:28.0.0"
+        resolutionStrategy.force "com.android.support:support-v4:28.0.0"
+        resolutionStrategy.force "android.arch.lifecycle:runtime:1.0.3"
     }
     buildTypes {
         release {
@@ -18,6 +26,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
@@ -27,14 +36,14 @@ android {
 dependencies {
     api 'com.android.support:design:28.0.0'
     def nav_version = "1.0.0-beta01"
-    implementation "android.arch.navigation:navigation-fragment:1.0.0-rc02" // use -ktx for Kotlin
-    implementation "android.arch.navigation:navigation-ui:1.0.0-rc02" // use -ktx for Kotlin
+    implementation "android.arch.navigation:navigation-fragment:1.0.0" // use -ktx for Kotlin
+    implementation "android.arch.navigation:navigation-ui:1.0.0" // use -ktx for Kotlin
     implementation 'com.android.support:cardview-v7:28.0.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:support-annotations:28.0.0'
     implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.google.firebase:firebase-core:16.0.7'
-    implementation 'com.google.firebase:firebase-auth:16.1.0'
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation 'com.google.firebase:firebase-auth:16.2.0'
     implementation 'com.android.support:support-core-utils:28.0.0'
     implementation 'com.google.android.gms:play-services-auth:16.0.1'
     implementation 'com.android.support:design:28.0.0'
@@ -58,6 +67,12 @@ dependencies {
     // Firebase UI
     // Used in FirebaseUIActivity.
     implementation 'com.firebaseui:firebase-ui-auth:4.3.1'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation "com.pdftron:pdftron:6.10.0"
+    implementation "com.pdftron:tools:6.10.0"
+    implementation 'com.android.support:multidex:1.0.3'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
