@@ -199,8 +199,9 @@ public class ViewContactsFragment extends Fragment {
             contacts.add(new Contact(
                     cursor.getString(1),//name
                     cursor.getString(2),//opdirnumber
-                    cursor.getString(3),//form
-                    cursor.getString(4)//opdwardnumber
+                    cursor.getString(3),//form1
+                    cursor.getString(4),//form2
+                    cursor.getString(5)//opdwardnumber
             ));
         }
 

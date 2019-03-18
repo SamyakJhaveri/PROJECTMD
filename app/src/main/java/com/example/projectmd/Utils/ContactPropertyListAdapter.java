@@ -106,10 +106,12 @@ public class ContactPropertyListAdapter extends ArrayAdapter<String> {
             holder.rightIcon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.d(TAG, "onClick: Adding a new form");
-                    Toast.makeText(getContext(), "Adding new form", Toast.LENGTH_SHORT).show();
                     // Open our sample document in the 'res/raw' resource folder
+                    //Add switch case to this to give working options of multiple forms once they are converted fillable
+                    //PDFs and added to the app.
                     if (property.equalsIgnoreCase("Request Form for Lab Investigations(HISTOPATHOLOGY)")) {
+                        Log.d(TAG, "onClick: Adding a new form");
+                        Toast.makeText(getContext(), "Adding new form", Toast.LENGTH_SHORT).show();
                         DocumentActivity.openDocument(getContext(), R.raw.request_form_for_lab_investigations_histopathology);
                         //finish();
                     }

@@ -53,7 +53,8 @@ public class EditContactFragment extends Fragment {
     private Contact mContact;
     private EditText mOPDIRNumber, mName, mOPDWardNumber;
    // private CircleImageView mContactImage;
-    private Spinner mSelectForm;
+    private Spinner mSelectForm1;
+    private Spinner mSelectForm2;
     private Toolbar toolbar;
    // private String mSelectedImagePath;
     private int mPreviousKeyStroke;
@@ -75,7 +76,8 @@ public class EditContactFragment extends Fragment {
         mOPDWardNumber.setTypeface(typeface);
 
         ///mContactImage = (CircleImageView) view.findViewById(R.id.contactImage);
-        mSelectForm = (Spinner) view.findViewById(R.id.selectForm);
+        mSelectForm1 = (Spinner) view.findViewById(R.id.selectForm1);
+        mSelectForm2 = (Spinner) view.findViewById(R.id.selectForm2);
         toolbar = (Toolbar) view.findViewById(R.id.editContactToolbar);
         Log.d(TAG, "onCreateView: Started.");
 
@@ -132,7 +134,8 @@ public class EditContactFragment extends Fragment {
                         }*/
                         mContact.setName(mName.getText().toString());
                         mContact.setOpdirnumber(mOPDIRNumber.getText().toString());
-                        mContact.setForm(mSelectForm.getSelectedItem().toString());
+                        mContact.setForm1(mSelectForm1.getSelectedItem().toString());
+                        mContact.setForm2(mSelectForm2.getSelectedItem().toString());
                         mContact.setOpdwardnumber(mOPDWardNumber.getText().toString());
 
                         databaseHelper.updateContact(mContact, contactID);
@@ -193,9 +196,12 @@ public class EditContactFragment extends Fragment {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.form_options, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mSelectForm.setAdapter(adapter);
-        int position = adapter.getPosition(mContact.getForm());
-        mSelectForm.setSelection(position);
+        mSelectForm1.setAdapter(adapter);
+        mSelectForm2.setAdapter(adapter);
+        int position1 = adapter.getPosition(mContact.getForm1());
+        int position2 = adapter.getPosition(mContact.getForm2());
+        mSelectForm1.setSelection(position1);
+        mSelectForm2.setSelection(position2);
     }
 
 

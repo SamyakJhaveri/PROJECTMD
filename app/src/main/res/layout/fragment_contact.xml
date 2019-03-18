@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -27,13 +28,51 @@
                 android:layout_marginTop="30dp"
                 android:textSize="30sp"
                 android:textColor="#000000"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="20dp"
                 android:id="@+id/contactName"/>
+            <TextView
+                android:id="@+id/opdirnumber123"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contactName"
+                android:text="OPD IR Number:"
+                android:textColor="#000000"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/opdirnumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contactName"
+                android:textColor="#000000"
+                android:layout_toEndOf="@+id/opdirnumber123"
+                android:layout_marginStart="5dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/opdwardnumber123"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contactName"
+                android:text="OPD Ward Number:"
+                android:textColor="#000000"
+                android:layout_toEndOf="@+id/opdirnumber"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/opdwardnumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contactName"
+                android:textColor="#000000"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/opdwardnumber123"
+                android:textSize="16sp"/>
 
             <ListView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/contactName"
+                android:layout_below="@+id/opdirnumber123"
                 android:id="@+id/lvContactProperties" >
 
             </ListView>

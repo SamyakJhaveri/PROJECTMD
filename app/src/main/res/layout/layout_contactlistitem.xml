@@ -42,7 +42,7 @@
         android:gravity="center"
         android:textStyle="bold"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/opdirnumber123"
+        android:layout_toEndOf="@+id/opdirnumber123"
         android:layout_below="@+id/contactName"
         android:layout_marginTop="10dp"
         android:layout_marginStart="5dp"/>
@@ -53,10 +53,6 @@
         android:layout_height="wrap_content"
         android:text="OPD/Ward Number:"
         android:gravity="center"
-
-
-
-
         android:textColor="@color/black"
         android:textSize="14sp"
         android:layout_toRightOf="@+id/opdirnumber"
@@ -78,7 +74,7 @@
         android:layout_marginStart="5dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/contactName"
-        android:layout_toRightOf="@+id/opdwardnumber123"/>
+        android:layout_toEndOf="@+id/opdwardnumber123"/>
 
     <ProgressBar
         android:layout_width="50dp"

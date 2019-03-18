@@ -49,6 +49,8 @@ public class ContactFragment extends Fragment {
     private Toolbar toolbar;
     private Contact mContact;
     private TextView mContactName;
+    private TextView mOPDIRNumber;
+    private TextView mOPDWardNumber;
     //private CircleImageView mContactImage;
     private ListView mListView;
 
@@ -64,6 +66,10 @@ public class ContactFragment extends Fragment {
 
         mContactName = (TextView) view.findViewById(R.id.contactName);
         mContactName.setTypeface(typeface);
+        mOPDIRNumber = (TextView) view.findViewById(R.id.opdirnumber);
+        mOPDIRNumber.setTypeface(typeface);
+        mOPDWardNumber = (TextView) view.findViewById(R.id.opdwardnumber);
+        mOPDWardNumber.setTypeface(typeface);
 
         //  mContactImage = (CircleImageView) view.findViewById(R.id.contactImage);
         mListView = (ListView) view.findViewById(R.id.lvContactProperties);
@@ -102,13 +108,16 @@ public class ContactFragment extends Fragment {
 
     private void init(){
         mContactName.setText(mContact.getName());
+        mOPDIRNumber.setText(mContact.getOpdirnumber());
+        mOPDWardNumber.setText(mContact.getOpdwardnumber());
 
         //UniversalImageLoader.setImage(mContact.getProfileImage(), mContactImage, null, "");
 
         ArrayList<String> properties = new ArrayList<>();
-        properties.add(mContact.getOpdirnumber());
-        properties.add(mContact.getOpdwardnumber());
-        properties.add(mContact.getForm());
+        /*properties.add(mContact.getOpdirnumber());
+        properties.add(mContact.getOpdwardnumber());*/
+        properties.add(mContact.getForm1());
+        properties.add(mContact.getForm2());
         ContactPropertyListAdapter adapter = new ContactPropertyListAdapter(getActivity(), R.layout.layout_cardview, properties);
         mListView.setAdapter(adapter);
         mListView.setDivider(null);

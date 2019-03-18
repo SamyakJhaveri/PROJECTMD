@@ -6,14 +6,16 @@ import android.os.Parcelable;
 public class Contact implements Parcelable {
     private String name;
     private String opdirnumber;
-    private String form;
+    private String form1;
+    private String form2;
     private String opdwardnumber;
    // private  String profileImage; //file://document/images/image.png
 
-    public Contact(String name, String opdirnumber, String form, String opdwardnumber) {
+    public Contact(String name, String opdirnumber, String form1, String form2, String opdwardnumber) {
         this.name = name;
         this.opdirnumber = opdirnumber;
-        this.form = form;
+        this.form1 = form1;
+        this.form2 = form2;
         this.opdwardnumber = opdwardnumber;
        // this.profileImage = profileImage;
     }
@@ -21,7 +23,8 @@ public class Contact implements Parcelable {
     protected Contact(Parcel in) {
         name = in.readString();
         opdirnumber = in.readString();
-        form = in.readString();
+        form1 = in.readString();
+        form2 = in.readString();
         opdwardnumber = in.readString();
         //profileImage = in.readString();
     }
@@ -54,12 +57,19 @@ public class Contact implements Parcelable {
         this.opdirnumber = opdirnumber;
     }
 
-    public String getForm() {
-        return form;
+    public String getForm1() {
+        return form1;
     }
 
-    public void setForm(String form) {
-        this.form = form;
+    public void setForm1(String form1) {
+        this.form1 = form1;
+    }
+    public String getForm2() {
+        return form2;
+    }
+
+    public void setForm2(String form2) {
+        this.form2 = form2;
     }
 
     public String getOpdwardnumber() {
@@ -83,7 +93,8 @@ public class Contact implements Parcelable {
         return "Contact{" +
                 "name='" + name + '\'' +
                 ", opdirnumber='" + opdirnumber + '\'' +
-                ", form='" + form + '\'' +
+                ", form1='" + form1 + '\'' +
+                ", form2='" + form2 + '\'' +
                 ", opdwardnumber='" + opdwardnumber + '\'' +
                 '}';
     }
@@ -97,7 +108,8 @@ public class Contact implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
         dest.writeString(opdirnumber);
-        dest.writeString(form);
+        dest.writeString(form1);
+        dest.writeString(form2);
         dest.writeString(opdwardnumber);
         //dest.writeString(profileImage);
     }
