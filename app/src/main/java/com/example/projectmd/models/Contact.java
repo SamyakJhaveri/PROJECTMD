@@ -8,14 +8,18 @@ public class Contact implements Parcelable {
     private String opdirnumber;
     private String form1;
     private String form2;
+    private String form3;
+    private String form4;
     private String opdwardnumber;
    // private  String profileImage; //file://document/images/image.png
 
-    public Contact(String name, String opdirnumber, String form1, String form2, String opdwardnumber) {
+    public Contact(String name, String opdirnumber, String form1, String form2,String form3,String form4, String opdwardnumber) {
         this.name = name;
         this.opdirnumber = opdirnumber;
         this.form1 = form1;
         this.form2 = form2;
+        this.form3 = form3;
+        this.form4 = form4;
         this.opdwardnumber = opdwardnumber;
        // this.profileImage = profileImage;
     }
@@ -25,6 +29,8 @@ public class Contact implements Parcelable {
         opdirnumber = in.readString();
         form1 = in.readString();
         form2 = in.readString();
+        form3 = in.readString();
+        form4 = in.readString();
         opdwardnumber = in.readString();
         //profileImage = in.readString();
     }
@@ -72,6 +78,21 @@ public class Contact implements Parcelable {
         this.form2 = form2;
     }
 
+    public String getForm3() {
+        return form3;
+    }
+
+    public void setForm3(String form3) {
+        this.form3 = form3;
+    }
+    public String getForm4() {
+        return form4;
+    }
+
+    public void setForm4(String form4) {
+        this.form4 = form4;
+    }
+
     public String getOpdwardnumber() {
         return opdwardnumber;
     }
@@ -95,6 +116,8 @@ public class Contact implements Parcelable {
                 ", opdirnumber='" + opdirnumber + '\'' +
                 ", form1='" + form1 + '\'' +
                 ", form2='" + form2 + '\'' +
+                ", form3='" + form3 + '\'' +
+                ", form4='" + form4 + '\'' +
                 ", opdwardnumber='" + opdwardnumber + '\'' +
                 '}';
     }
@@ -110,8 +133,9 @@ public class Contact implements Parcelable {
         dest.writeString(opdirnumber);
         dest.writeString(form1);
         dest.writeString(form2);
+        dest.writeString(form3);
+        dest.writeString(form4);
         dest.writeString(opdwardnumber);
         //dest.writeString(profileImage);
     }
 }
-

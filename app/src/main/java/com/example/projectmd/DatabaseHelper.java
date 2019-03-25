@@ -17,7 +17,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL2 = "OPDIR_NUMBER";
     public static final String COL3 = "FORM1";
     public static final String COL4 = "FORM2";
-    public static final String COL5 = "OPDWARD_NUMBER";
+    public static final String COL5 = "FORM3";
+    public static final String COL6 = "FORM4";
+    public static final String COL7 = "OPDWARD_NUMBER";
     //public static final String COL5 = "PROFILE_PHOTO";
 
     public DatabaseHelper(Context context) {
@@ -33,7 +35,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COL2 + " TEXT, " +
                 COL3 + " TEXT, " +
                 COL4 + " TEXT, " +
-                COL5 + " TEXT)";
+                COL5 + " TEXT, " +
+                COL6 + " TEXT, " +
+                COL7 + " TEXT)";
         db.execSQL(sql);
     }
 
@@ -54,7 +58,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL2, contact.getOpdirnumber());
         contentValues.put(COL3, contact.getForm1());
         contentValues.put(COL4, contact.getForm2());
-        contentValues.put(COL5, contact.getOpdwardnumber());
+        contentValues.put(COL5, contact.getForm3());
+        contentValues.put(COL6, contact.getForm4());
+        contentValues.put(COL7, contact.getOpdwardnumber());
         //contentValues.put(COL5, contact.getProfileImage());
 
         long result = db.insert(TABLE_NAME, null,contentValues);
@@ -93,7 +99,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL2, contact.getOpdirnumber());
         contentValues.put(COL3, contact.getForm1());
         contentValues.put(COL4, contact.getForm2());
-        contentValues.put(COL5, contact.getOpdwardnumber());
+        contentValues.put(COL5, contact.getForm3());
+        contentValues.put(COL6, contact.getForm4());
+        contentValues.put(COL7, contact.getOpdwardnumber());
         //contentValues.put(COL5, contact.getProfileImage());
 
         int update = db.update(TABLE_NAME, contentValues, COL0 + " = ? ", new String[] {String.valueOf(id)} );

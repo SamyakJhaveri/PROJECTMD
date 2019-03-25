@@ -50,7 +50,7 @@ public class ContactPropertyListAdapter extends ArrayAdapter<String> {
     }
 
     //---------------------------Stuff to change--------------------------------------------
-    private static class ViewHolder{
+    private static class ViewHolder {
         TextView property;
         ImageView rightIcon;
         ImageView leftIcon;
@@ -66,10 +66,9 @@ public class ContactPropertyListAdapter extends ArrayAdapter<String> {
          */
         final ViewHolder holder;
 
-        if(convertView == null){
+        if (convertView == null) {
             convertView = mInflater.inflate(layoutResource, parent, false);
             holder = new ViewHolder();
-
 
 
             //---------------------------Stuff to change--------------------------------------------
@@ -79,8 +78,7 @@ public class ContactPropertyListAdapter extends ArrayAdapter<String> {
             //--------------------------------------------------------------------------------------
 
             convertView.setTag(holder);
-        }
-        else{
+        } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
@@ -90,7 +88,7 @@ public class ContactPropertyListAdapter extends ArrayAdapter<String> {
 
         //check if it's an email or a phone number
         //email
-       if((property.length() != 0)){
+        if ((property.length() != 0)) {
             //Phone call
             holder.leftIcon.setImageResource(mContext.getResources().getIdentifier("@drawable/ic_view", null, mContext.getPackageName()));
             holder.leftIcon.setOnClickListener(new View.OnClickListener() {
@@ -98,7 +96,7 @@ public class ContactPropertyListAdapter extends ArrayAdapter<String> {
                 public void onClick(View v) {
                     Log.d(TAG, "onClick: Opening form");
                     Toast.makeText(getContext(), "Opening Form", Toast.LENGTH_SHORT).show();
-               }
+                }
             });
 
             //setup the icon for sending text messages
@@ -109,15 +107,57 @@ public class ContactPropertyListAdapter extends ArrayAdapter<String> {
                     // Open our sample document in the 'res/raw' resource folder
                     //Add switch case to this to give working options of multiple forms once they are converted fillable
                     //PDFs and added to the app.
-                    if (property.equalsIgnoreCase("Request Form for Lab Investigations(HISTOPATHOLOGY)")) {
-                        Log.d(TAG, "onClick: Adding a new form");
-                        Toast.makeText(getContext(), "Adding new form", Toast.LENGTH_SHORT).show();
-                        DocumentActivity.openDocument(getContext(), R.raw.request_form_for_lab_investigations_histopathology);
-                        //finish();
-                    }
-                    else{
-                        Toast.makeText(getContext(), "Form not available yet :(", Toast.LENGTH_SHORT).show();
+                    switch (property) {
+                        case "-None-":
+                            Log.d(TAG, "onClick: Form Not Selected");
+                            Toast.makeText(getContext(), "Form not Selected", Toast.LENGTH_SHORT).show();
+                            break;
 
+                        case "ABO Grouping/Crossmatching Request Form(Blood Bank)":
+                            Log.d(TAG, "onClick: Adding a new form");
+                            Toast.makeText(getContext(), "Adding ABO Grouping/Crossmatching Request Form(Blood Bank)", Toast.LENGTH_SHORT).show();
+                            DocumentActivity.openDocument(getContext(), R.raw.request_form_for_abo_grouping_crossmatching_blood_bank);
+                            //finish();
+                            break;
+                        case "Clinical/Hemato/Gynac Lab Investigation Request Form":
+                            Log.d(TAG, "onClick: Adding a new form");
+                            Toast.makeText(getContext(), "Adding Clinical/Hemato/Gynac Lab Investigation Request Formk)", Toast.LENGTH_SHORT).show();
+                            DocumentActivity.openDocument(getContext(), R.raw.request_form_for_lab_investigations_clinical_hematology_gynac_lab);
+                            //finish();
+                            break;
+                        case "Endocrine Test Request Form":
+                            Log.d(TAG, "onClick: Adding a new form");
+                            Toast.makeText(getContext(), "Adding Endocrine Test Request Form", Toast.LENGTH_SHORT).show();
+                            DocumentActivity.openDocument(getContext(), R.raw.request_for_endocrine_test);
+                            //finish();
+                            break;
+                        case "FNAC Cytology Report":
+                            Log.d(TAG, "onClick: Adding a new form");
+                            Toast.makeText(getContext(), "Adding FNAC Cytology Report", Toast.LENGTH_SHORT).show();
+                            DocumentActivity.openDocument(getContext(), R.raw.report_of_fine_needle_aspiration_cytology);
+                            //finish();
+                            break;
+                        case "FNAC History Data Sheet":
+                            Log.d(TAG, "onClick: Adding a new form");
+                            Toast.makeText(getContext(), "Adding FNAC History Data Sheet", Toast.LENGTH_SHORT).show();
+                            DocumentActivity.openDocument(getContext(), R.raw.fnac_history_data_sheet);
+                            //finish();
+                            break;
+                        case "Histopathology Form Request Form":
+                            Log.d(TAG, "onClick: Adding a new form");
+                            Toast.makeText(getContext(), "Adding Histopathology Form Request Form", Toast.LENGTH_SHORT).show();
+                            DocumentActivity.openDocument(getContext(), R.raw.request_form_for_histopathology_test);
+                            //finish();
+                            break;
+                        case "Histopathology Lab Investigation Request Form":
+                            Log.d(TAG, "onClick: Adding a new form");
+                            Toast.makeText(getContext(), "Adding Histopathology Lab Investigation Request Form", Toast.LENGTH_SHORT).show();
+                            DocumentActivity.openDocument(getContext(), R.raw.request_form_for_lab_investigations_histopathology);
+                            //finish();
+                            break;
+                        default:
+                            Toast.makeText(getContext(), "Invalid Entry.", Toast.LENGTH_SHORT).show();
+                            break;
                     }
                 }
             });
@@ -126,11 +166,3 @@ public class ContactPropertyListAdapter extends ArrayAdapter<String> {
         return convertView;
     }
 }
-
-
-
-
-
-
-
-

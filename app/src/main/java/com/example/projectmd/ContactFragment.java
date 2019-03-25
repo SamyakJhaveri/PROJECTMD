@@ -118,6 +118,8 @@ public class ContactFragment extends Fragment {
         properties.add(mContact.getOpdwardnumber());*/
         properties.add(mContact.getForm1());
         properties.add(mContact.getForm2());
+        properties.add(mContact.getForm3());
+        properties.add(mContact.getForm4());
         ContactPropertyListAdapter adapter = new ContactPropertyListAdapter(getActivity(), R.layout.layout_cardview, properties);
         mListView.setAdapter(adapter);
         mListView.setDivider(null);

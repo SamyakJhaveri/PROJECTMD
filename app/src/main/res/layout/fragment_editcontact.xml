@@ -134,14 +134,35 @@
                     android:id="@+id/selectForm2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/etPatientOPDWardNumber"
                     android:layout_below="@+id/selectForm1"
+                    android:layout_alignStart="@+id/etPatientOPDWardNumber"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="30dp"
                     android:entries="@array/form_options"
                     android:textColor="@color/black"
-                    android:textSize="16sp"/>
-
+                    android:textSize="16sp" />
+                <Spinner
+                    android:id="@+id/selectForm3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/selectForm2"
+                    android:layout_alignStart="@+id/etPatientOPDWardNumber"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:entries="@array/form_options"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+                <Spinner
+                    android:id="@+id/selectForm4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/selectForm3"
+                    android:layout_alignStart="@+id/etPatientOPDWardNumber"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:entries="@array/form_options"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
             </RelativeLayout>
 
 

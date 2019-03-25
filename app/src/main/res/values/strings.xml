@@ -65,14 +65,13 @@
     <string name="action_settings">Settings</string>
 
     <string-array name="form_options">
-        <item>Post Blood Transfusion Investigation Form</item>
-        <item>Request For for Lab Investigations(Clinical/Hematology/Gynaec Lab)</item>
-        <item>Request For for Lab Investigation(s)(BIOCHEMISTRY)</item>
-        <item>Request for Endocrine Test</item>
-        <item>History Form for Lab Investigations (MICROBIOLOGY)</item>
-        <item>Request Form for AB Grouping/Crossmatching (BLOOD BANK)(PATHOLOGY)</item>
+        <item>-None-</item>
+        <item>ABO Grouping/Crossmatching Request Form(Blood Bank)</item>
+        <item>Clinical/Hemato/Gynac Lab Investigation Request Form</item>
+        <item>Endocrine Test Request Form</item>
+        <item>FNAC Cytology Report</item>
         <item>FNAC History Data Sheet</item>
-        <item>Request Form for Lab Investigations (PATHOLOGY)</item>
-        <item>Request Form for Lab Investigations(HISTOPATHOLOGY)</item>
+        <item>Histopathology Form Request Form</item>
+        <item>Histopathology Lab Investigation Request Form</item>
     </string-array>
 </resources>

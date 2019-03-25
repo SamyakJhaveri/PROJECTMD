@@ -30,6 +30,8 @@ public class AddContactFragment extends Fragment {
     //private CircleImageView mContactImage;
     private Spinner mSelectForm1;
     private Spinner mSelectForm2;
+    private Spinner mSelectForm3;
+    private Spinner mSelectForm4;
     private Toolbar toolbar;
    //private String mSelectedImagePath;
     private int mPreviousKeyStroke;
@@ -49,6 +51,8 @@ public class AddContactFragment extends Fragment {
         //mContactImage = (CircleImageView) view.findViewById(R.id.contactImage);
         mSelectForm1 = (Spinner) view.findViewById(R.id.selectForm1);
         mSelectForm2 = (Spinner) view.findViewById(R.id.selectForm2);
+        mSelectForm3 = (Spinner) view.findViewById(R.id.selectForm3);
+        mSelectForm4 = (Spinner) view.findViewById(R.id.selectForm4);
 
         mOPDIRNumber.setTypeface(typeface);
         mName.setTypeface(typeface);
@@ -136,6 +140,8 @@ public class AddContactFragment extends Fragment {
                             mOPDIRNumber.getText().toString(),
                             mSelectForm1.getSelectedItem().toString(),
                             mSelectForm2.getSelectedItem().toString(),
+                            mSelectForm3.getSelectedItem().toString(),
+                            mSelectForm4.getSelectedItem().toString(),
                             mOPDWardNumber.getText().toString());
                     if(databaseHelper.addContact(contact))
                     {

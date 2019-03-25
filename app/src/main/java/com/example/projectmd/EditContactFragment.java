@@ -55,6 +55,8 @@ public class EditContactFragment extends Fragment {
    // private CircleImageView mContactImage;
     private Spinner mSelectForm1;
     private Spinner mSelectForm2;
+    private Spinner mSelectForm3;
+    private Spinner mSelectForm4;
     private Toolbar toolbar;
    // private String mSelectedImagePath;
     private int mPreviousKeyStroke;
@@ -198,10 +200,16 @@ public class EditContactFragment extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mSelectForm1.setAdapter(adapter);
         mSelectForm2.setAdapter(adapter);
+        mSelectForm3.setAdapter(adapter);
+        mSelectForm4.setAdapter(adapter);
         int position1 = adapter.getPosition(mContact.getForm1());
         int position2 = adapter.getPosition(mContact.getForm2());
+        int position3 = adapter.getPosition(mContact.getForm3());
+        int position4 = adapter.getPosition(mContact.getForm4());
         mSelectForm1.setSelection(position1);
         mSelectForm2.setSelection(position2);
+        mSelectForm3.setSelection(position3);
+        mSelectForm4.setSelection(position4);
     }
 
 
