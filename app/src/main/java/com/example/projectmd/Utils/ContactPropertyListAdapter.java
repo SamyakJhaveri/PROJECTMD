@@ -115,13 +115,6 @@ public class ContactPropertyListAdapter extends ArrayAdapter<String> {
                         DocumentActivity.openDocument(getContext(), R.raw.request_form_for_lab_investigations_histopathology);
                         //finish();
                     }
-                    else if(property.equalsIgnoreCase("FNAC History Data Sheet")){
-                        Log.d(TAG, "onClick: Adding a new form");
-                        Toast.makeText(getContext(), "Adding new form", Toast.LENGTH_SHORT).show();
-                        DocumentActivity.openDocument(getContext(), R.raw.fnac_history_data_sheet);
-                        //finish();
-
-                    }
                     else{
                         Toast.makeText(getContext(), "Form not available yet :(", Toast.LENGTH_SHORT).show();
 
