@@ -85,7 +85,7 @@
                     android:layout_marginStart="20dp"
                     android:hint="Enter OPD/IR Number"
                     android:layout_toRightOf="@+id/ivPhone"
-                    android:inputType="textNoSuggestions"
+                    android:inputType="number"
                     android:textColor="@color/black"
                     android:textSize="16sp"/>
 
@@ -111,7 +111,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/ivEmail"
-                    android:inputType="textNoSuggestions"
+                    android:inputType="number"
                     android:textSize="16sp"
                     android:textColor="@color/black"
                     android:hint="Enter OPD/Ward Number"

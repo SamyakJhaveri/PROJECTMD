@@ -60,8 +60,6 @@ public class ViewContactsFragment extends Fragment {
         public void OnContactSelected(Contact con);
     }
 
-
-
     OnContactSelectedListener mContactListener;
 
     public interface OnAddContactListener{

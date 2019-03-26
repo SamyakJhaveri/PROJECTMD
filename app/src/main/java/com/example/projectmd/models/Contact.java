@@ -13,7 +13,7 @@ public class Contact implements Parcelable {
     private String opdwardnumber;
    // private  String profileImage; //file://document/images/image.png
 
-    public Contact(String name, String opdirnumber, String form1, String form2,String form3,String form4, String opdwardnumber) {
+    public Contact(String name, String opdirnumber, String form1, String form2, String form3, String form4, String opdwardnumber) {
         this.name = name;
         this.opdirnumber = opdirnumber;
         this.form1 = form1;

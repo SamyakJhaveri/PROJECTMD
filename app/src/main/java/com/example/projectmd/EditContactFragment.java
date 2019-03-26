@@ -80,6 +80,8 @@ public class EditContactFragment extends Fragment {
         ///mContactImage = (CircleImageView) view.findViewById(R.id.contactImage);
         mSelectForm1 = (Spinner) view.findViewById(R.id.selectForm1);
         mSelectForm2 = (Spinner) view.findViewById(R.id.selectForm2);
+        mSelectForm3 = (Spinner) view.findViewById(R.id.selectForm3);
+        mSelectForm4 = (Spinner) view.findViewById(R.id.selectForm4);
         toolbar = (Toolbar) view.findViewById(R.id.editContactToolbar);
         Log.d(TAG, "onCreateView: Started.");
 
@@ -97,6 +99,7 @@ public class EditContactFragment extends Fragment {
         mContact = getContactFromBundle();
 
         if(mContact  != null){
+
             init();
         }
 
@@ -138,6 +141,8 @@ public class EditContactFragment extends Fragment {
                         mContact.setOpdirnumber(mOPDIRNumber.getText().toString());
                         mContact.setForm1(mSelectForm1.getSelectedItem().toString());
                         mContact.setForm2(mSelectForm2.getSelectedItem().toString());
+                        mContact.setForm3(mSelectForm3.getSelectedItem().toString());
+                        mContact.setForm4(mSelectForm4.getSelectedItem().toString());
                         mContact.setOpdwardnumber(mOPDWardNumber.getText().toString());
 
                         databaseHelper.updateContact(mContact, contactID);
@@ -188,7 +193,7 @@ public class EditContactFragment extends Fragment {
         }
     }
 
-    private void init(){
+    public void init(){
         mOPDIRNumber.setText(mContact.getOpdirnumber());
         mName.setText(mContact.getName());
         mOPDWardNumber.setText(mContact.getOpdwardnumber());

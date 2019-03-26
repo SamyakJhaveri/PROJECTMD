@@ -81,7 +81,7 @@
                     android:layout_marginStart="20dp"
                     android:hint="Enter OPD/IR Number"
                     android:layout_toRightOf="@+id/ivPhone"
-                    android:inputType="textNoSuggestions"
+                    android:inputType="number"
                     android:textColor="@color/black"
                     android:textSize="16sp"/>
 
@@ -111,7 +111,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_toRightOf="@+id/ivEmail"
                     android:hint="Enter OPD/Ward Number"
-                    android:inputType="textNoSuggestions"
+                    android:inputType="number"
                     android:textColor="@color/black"
                     android:textSize="16sp"/>
                 <Spinner
@@ -143,6 +143,7 @@
                     android:layout_alignStart="@+id/etPatientOPDWardNumber"
                     android:layout_below="@+id/selectForm2"
                     android:layout_marginStart="20dp"
+
                     android:layout_marginTop="30dp"
                     android:entries="@array/form_options"
                     android:textColor="@color/black"
