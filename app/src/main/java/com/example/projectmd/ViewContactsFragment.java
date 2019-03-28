@@ -38,15 +38,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Locale;
 
-/**
- * Created by User on 6/12/2017.
- */
-
 public class ViewContactsFragment extends Fragment {
     private View navHeader;
 
     private static final String TAG = "ViewContactsFragment";
-    private String godimage = "activechristianity.org/wp-content/uploads/2016/07/546-why-God-has-to-be-a-jealous-God-ingress.jpg";
+    /*private String godimage = "activechristianity.org/wp-content/uploads/2016/07/546-why-God-has-to-be-a-jealous-God-ingress.jpg";
     private String visionimage = "i2-prod.irishmirror.ie/incoming/article12422645.ece/ALTERNATES/s615b/PROD-Paul-BettanyJPG.jpg";
     private String nickimage = "shortlist.imgix.net/app/uploads/2018/10/23142114/does-this-multi-layered-avengers-theory-make-the-most-sense-yet-3-256x256.jpeg?w=256&h=256&fit=max&auto=format%2Ccompress";
     private String captainimage = "lrmonline.com/file/2017/10/captain-marvel.jpg";
@@ -54,7 +50,7 @@ public class ViewContactsFragment extends Fragment {
     private String thanosimage = "amp.businessinsider.com/images/5ae762b77708e968bd4a8ece-750-562.jpg";
     private String lokiimage = "cdn3.movieweb.com/i/article/3UJDoNVTPy5I9buocsj7u57HQpUmCM/798:50/Thor-3-Ragnarok-Tom-Hiddleston-Loki-Last-Marvel.jpg";
 
-
+*/
 
     public interface OnContactSelectedListener {
         public void OnContactSelected(Contact con);

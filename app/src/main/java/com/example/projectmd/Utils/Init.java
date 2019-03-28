@@ -3,9 +3,6 @@ package com.example.projectmd.Utils;
 
 import android.Manifest;
 
-/**
- * Created by User on 6/12/2017.
- */
 
 public class Init {
 

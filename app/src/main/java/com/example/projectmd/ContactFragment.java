@@ -26,9 +26,7 @@ import com.example.projectmd.models.Contact;
 
 import java.util.ArrayList;
 
-/**
- * Created by User on 6/12/2017.
- */
+
 
 public class ContactFragment extends Fragment {
     private static final String TAG = "ContactFragment";
@@ -51,7 +49,6 @@ public class ContactFragment extends Fragment {
     private TextView mContactName;
     private TextView mOPDIRNumber;
     private TextView mOPDWardNumber;
-    //private CircleImageView mContactImage;
     private ListView mListView;
 
     @Nullable
@@ -71,7 +68,6 @@ public class ContactFragment extends Fragment {
         mOPDWardNumber = (TextView) view.findViewById(R.id.opdwardnumber);
         mOPDWardNumber.setTypeface(typeface);
 
-        //  mContactImage = (CircleImageView) view.findViewById(R.id.contactImage);
         mListView = (ListView) view.findViewById(R.id.lvContactProperties);
         Log.d(TAG, "onCreateView: Started.");
         mContact = getContactFromBundle();
@@ -111,11 +107,9 @@ public class ContactFragment extends Fragment {
         mOPDIRNumber.setText(mContact.getOpdirnumber());
         mOPDWardNumber.setText(mContact.getOpdwardnumber());
 
-        //UniversalImageLoader.setImage(mContact.getProfileImage(), mContactImage, null, "");
 
         ArrayList<String> properties = new ArrayList<>();
-        /*properties.add(mContact.getOpdirnumber());
-        properties.add(mContact.getOpdwardnumber());*/
+
         properties.add(mContact.getForm1());
         properties.add(mContact.getForm2());
         properties.add(mContact.getForm3());

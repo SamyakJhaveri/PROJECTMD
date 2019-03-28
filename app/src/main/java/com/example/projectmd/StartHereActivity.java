@@ -19,7 +19,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.projectmd.Utils.UniversalImageLoader;
 import com.example.projectmd.models.Contact;
 import com.google.firebase.auth.FirebaseAuth;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -29,8 +28,7 @@ import java.io.ByteArrayOutputStream;
 public class StartHereActivity extends AppCompatActivity implements
         ViewContactsFragment.OnContactSelectedListener,
         ContactFragment.OnEditContactListener,
-        ViewContactsFragment.OnAddContactListener,
-        NavigationView.OnNavigationItemSelectedListener{
+        ViewContactsFragment.OnAddContactListener{
 
     private static final String TAG = "StartHereActivity";
     private View navHeader;
@@ -79,7 +77,7 @@ public class StartHereActivity extends AppCompatActivity implements
         transaction.addToBackStack(getString(R.string.add_contact_fragment));
         transaction.commit();
     }
-    @Override
+    /*@Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -109,10 +107,10 @@ public class StartHereActivity extends AppCompatActivity implements
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     @SuppressWarnings("StatementWithEmptyBody")
-    @Override
+    /*@Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
@@ -135,7 +133,7 @@ public class StartHereActivity extends AppCompatActivity implements
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
+    }*/
     public void logout()
     {
         FirebaseAuth.getInstance().signOut();
@@ -155,7 +153,7 @@ public class StartHereActivity extends AppCompatActivity implements
         Log.d(TAG, "onCreateView: Started.");
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -165,7 +163,7 @@ public class StartHereActivity extends AppCompatActivity implements
         navigationView.setNavigationItemSelectedListener(this);
         navHeader = navigationView.getHeaderView(0);
 
-        navigationView.setCheckedItem(R.id.nav_patients);
+        navigationView.setCheckedItem(R.id.nav_patients);*/
         ViewContactsFragment fragment = new ViewContactsFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frame, fragment);
@@ -174,7 +172,7 @@ public class StartHereActivity extends AppCompatActivity implements
 
         Log.d(TAG, "onCreate: started.");
 
-        initImageLoader();
+       // initImageLoader();
 
         init();
     }
@@ -192,19 +190,16 @@ public class StartHereActivity extends AppCompatActivity implements
         transaction.commit();
     }
 
-    private void initImageLoader(){
+    /*private void initImageLoader(){
         UniversalImageLoader universalImageLoader = new UniversalImageLoader(StartHereActivity.this);
         ImageLoader.getInstance().init(universalImageLoader.getConfig());
-    }
+    }*/
 
     /**
      * Compress a bitmap by the @param "quality"
-     * Quality can be anywhere from 1-100 : 100 being the highest quality.
-     * @param bitmap
-     * @param quality
-     * @return
+     * Quality can be anywhere from 1-100 : 100 being the highest quality
      */
-    public Bitmap compressBitmap(Bitmap bitmap, int quality){
+    /*public Bitmap compressBitmap(Bitmap bitmap, int quality){
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, quality, stream);
         return bitmap;
@@ -225,9 +220,6 @@ public class StartHereActivity extends AppCompatActivity implements
 
     /**
      * Checks to see if permission was granted for the passed parameters
-     * ONLY ONE PERMISSION MAYT BE CHECKED AT A TIME
-     * @param permission
-     * @return
      */
     public boolean checkPermission(String[] permission){
         Log.d(TAG, "checkPermission: checking permissions for:" + permission[0]);
@@ -260,6 +252,5 @@ public class StartHereActivity extends AppCompatActivity implements
                 break;
         }
     }
-
 
 }

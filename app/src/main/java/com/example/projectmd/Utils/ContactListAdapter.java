@@ -22,9 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Created by User on 6/12/2017.
- */
 
 public class ContactListAdapter extends ArrayAdapter<Contact> {
 
@@ -60,7 +57,6 @@ public class ContactListAdapter extends ArrayAdapter<Contact> {
         TextView name;
         TextView opdirnumber;
         TextView opdwarnumber;
-        //CircleImageView contactImage;
         ProgressBar mProgressBar;
     }
 
@@ -82,7 +78,6 @@ public class ContactListAdapter extends ArrayAdapter<Contact> {
             holder.name = (TextView) convertView.findViewById(R.id.contactName);
             holder.opdirnumber = (TextView)convertView.findViewById(R.id.opdirnumber);
             holder.opdwarnumber = (TextView)convertView.findViewById(R.id.opdwardnumber);
-            //holder.contactImage = (CircleImageView) convertView.findViewById(R.id.contactImage);
             //--------------------------------------------------------------------------------------
 
             opdir12 = (TextView)convertView.findViewById(R.id.opdirnumber123);
@@ -100,7 +95,6 @@ public class ContactListAdapter extends ArrayAdapter<Contact> {
         String name_ = getItem(position).getName();
         String opdirnumber_ = getItem(position).getOpdirnumber();
         String opdwarnumber_ = getItem(position).getOpdwardnumber();
-        //String imagePath = getItem(position).getProfileImage();
         holder.name.setText(name_);
         holder.opdirnumber.setText(opdirnumber_);
         holder.opdwarnumber.setText(opdwarnumber_);
@@ -109,31 +103,6 @@ public class ContactListAdapter extends ArrayAdapter<Contact> {
         holder.opdwarnumber.setTypeface(typeface);
         opdir12.setTypeface(typeface1);
         opdward12.setTypeface(typeface1);
-
-
-        /*ImageLoader imageLoader = ImageLoader.getInstance();
-
-        imageLoader.displayImage(mAppend + imagePath, holder.contactImage, new ImageLoadingListener() {
-            @Override
-            public void onLoadingStarted(String imageUri, View view) {
-                holder.mProgressBar.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
-                holder.mProgressBar.setVisibility(View.GONE);
-            }
-
-            @Override
-            public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
-                holder.mProgressBar.setVisibility(View.GONE);
-            }
-
-            @Override
-            public void onLoadingCancelled(String imageUri, View view) {
-                holder.mProgressBar.setVisibility(View.GONE);
-            }
-        });*/
         //--------------------------------------------------------------------------------------
 
         return convertView;

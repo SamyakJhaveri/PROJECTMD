@@ -11,7 +11,6 @@ public class Contact implements Parcelable {
     private String form3;
     private String form4;
     private String opdwardnumber;
-   // private  String profileImage; //file://document/images/image.png
 
     public Contact(String name, String opdirnumber, String form1, String form2, String form3, String form4, String opdwardnumber) {
         this.name = name;
@@ -21,7 +20,6 @@ public class Contact implements Parcelable {
         this.form3 = form3;
         this.form4 = form4;
         this.opdwardnumber = opdwardnumber;
-       // this.profileImage = profileImage;
     }
 
     protected Contact(Parcel in) {
@@ -32,7 +30,6 @@ public class Contact implements Parcelable {
         form3 = in.readString();
         form4 = in.readString();
         opdwardnumber = in.readString();
-        //profileImage = in.readString();
     }
 
     public static final Creator<Contact> CREATOR = new Creator<Contact>() {
@@ -101,13 +98,7 @@ public class Contact implements Parcelable {
         this.opdwardnumber = opdwardnumber;
     }
 
-    /*public String getProfileImage() {
-        return profileImage;
-    }
 
-    public void setProfileImage(String profileImage) {
-        this.profileImage = profileImage;
-    }*/
 
     @Override
     public String toString() {
@@ -136,6 +127,5 @@ public class Contact implements Parcelable {
         dest.writeString(form3);
         dest.writeString(form4);
         dest.writeString(opdwardnumber);
-        //dest.writeString(profileImage);
     }
 }

@@ -20,7 +20,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL5 = "FORM3";
     public static final String COL6 = "FORM4";
     public static final String COL7 = "OPDWARD_NUMBER";
-    //public static final String COL5 = "PROFILE_PHOTO";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -102,7 +101,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL5, contact.getForm3());
         contentValues.put(COL6, contact.getForm4());
         contentValues.put(COL7, contact.getOpdwardnumber());
-        //contentValues.put(COL5, contact.getProfileImage());
 
         int update = db.update(TABLE_NAME, contentValues, COL0 + " = ? ", new String[] {String.valueOf(id)} );
 

@@ -24,11 +24,6 @@ import com.pdftron.pdf.controls.DocumentActivity;
 import java.io.File;
 import java.util.List;
 
-/**
- * Created by User on 6/12/2017.
- */
-
-
 
 
 public class ContactPropertyListAdapter extends ArrayAdapter<String> {
@@ -86,8 +81,7 @@ public class ContactPropertyListAdapter extends ArrayAdapter<String> {
         final String property = getItem(position);
         holder.property.setText(property);
 
-        //check if it's an email or a phone number
-        //email
+
         if ((property.length() != 0)) {
             //Phone call
             holder.leftIcon.setImageResource(mContext.getResources().getIdentifier("@drawable/ic_view", null, mContext.getPackageName()));
@@ -99,7 +93,6 @@ public class ContactPropertyListAdapter extends ArrayAdapter<String> {
                 }
             });
 
-            //setup the icon for sending text messages
             holder.rightIcon.setImageResource(mContext.getResources().getIdentifier("@drawable/ic_add", null, mContext.getPackageName()));
             holder.rightIcon.setOnClickListener(new View.OnClickListener() {
                 @Override

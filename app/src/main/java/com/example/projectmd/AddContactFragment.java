@@ -33,7 +33,6 @@ public class AddContactFragment extends Fragment {
     private Spinner mSelectForm3;
     private Spinner mSelectForm4;
     private Toolbar toolbar;
-   //private String mSelectedImagePath;
     private int mPreviousKeyStroke;
 
     @Nullable
@@ -48,7 +47,6 @@ public class AddContactFragment extends Fragment {
         mOPDIRNumber = (EditText) view.findViewById(R.id.etPatientOPDIRNumber);
         mName = (EditText) view.findViewById(R.id.etContactName);
         mOPDWardNumber = (EditText) view.findViewById(R.id.etPatientOPDWardNumber);
-        //mContactImage = (CircleImageView) view.findViewById(R.id.contactImage);
         mSelectForm1 = (Spinner) view.findViewById(R.id.selectForm1);
         mSelectForm2 = (Spinner) view.findViewById(R.id.selectForm2);
         mSelectForm3 = (Spinner) view.findViewById(R.id.selectForm3);
@@ -62,10 +60,6 @@ public class AddContactFragment extends Fragment {
         toolbar = (Toolbar) view.findViewById(R.id.editContactToolbar);
         Log.d(TAG, "onCreateView: Started.");
 
-        //mSelectedImagePath = null;
-
-        //load the default images by causing an error
-        //UniversalImageLoader.setImage(null, mContactImage, null, "");
 
         //set the heading the for the toolbar
         TextView heading = (TextView) view.findViewById(R.id.textContactToolbar);
@@ -99,31 +93,6 @@ public class AddContactFragment extends Fragment {
             }
         });
 
-        // initiate the dialog box for choosing an image
-        /*ImageView ivCamera = (ImageView) view.findViewById(R.id.ivCamera);
-        ivCamera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                /*
-                Make sure all permissions have been verified before opening the dialog
-
-                for(int i = 0; i < Init.PERMISSIONS.length; i++){
-                    String[] permission = {Init.PERMISSIONS[i]};
-                    if(((StartHereActivity)getActivity()).checkPermission(permission)){
-                        if(i == Init.PERMISSIONS.length - 1){
-                            Log.d(TAG, "onClick: Opening the 'Image Selection Dialog Box'.");
-                            ChangePhotoDialog dialog = new ChangePhotoDialog();
-                            dialog.show(getFragmentManager(), getString(R.string.change_photo_dialog));
-                            dialog.setTargetFragment(AddContactFragment.this, 0);
-                        }
-                    }else{
-                        ((StartHereActivity)getActivity()).verifyPermissions(permission);
-                    }
-                }
-
-
-            }
-        });*/
 
         //set onClickListener to the 'Checkmark' Icon for saving the contact
         ImageView confirmNewContact = (ImageView)view.findViewById(R.id.ivCheckMark);
@@ -176,65 +145,6 @@ public class AddContactFragment extends Fragment {
         }
     }
 
-    /**
-     * Initialize the onTextChangeListener for formatting the phonenumber
-     */
-    /*private void initOnTextChangeListener(){
-
-        mPhoneNumber.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-
-                mPreviousKeyStroke = keyCode;
-
-                return false;
-            }
-        });
-
-        mPhoneNumber.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-                String number = s.toString();
-                Log.d(TAG, "afterTextChanged:  " + number);
-
-                if(number.length() == 3 && mPreviousKeyStroke != KeyEvent.KEYCODE_DEL
-                        && !number.contains("(")){
-                    number = String.format("(%s", s.toString().substring(0,3));
-                    mPhoneNumber.setText(number);
-                    mPhoneNumber.setSelection(number.length());
-                }
-                else if(number.length() == 5 && mPreviousKeyStroke != KeyEvent.KEYCODE_DEL
-                        && !number.contains(")")){
-                    number = String.format("(%s) %s",
-                            s.toString().substring(1,4),
-                            s.toString().substring(4,5));
-                    mPhoneNumber.setText(number);
-                    mPhoneNumber.setSelection(number.length());
-                }
-                else if(number.length() ==10 && mPreviousKeyStroke != KeyEvent.KEYCODE_DEL
-                        && !number.contains("-")){
-                    number = String.format("(%s) %s-%s",
-                            s.toString().substring(1,4),
-                            s.toString().substring(6,9),
-                            s.toString().substring(9,10));
-                    mPhoneNumber.setText(number);
-                    mPhoneNumber.setSelection(number.length());
-
-                }
-            }
-        });
-    }*/
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -252,29 +162,4 @@ public class AddContactFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * Retrieves the selected image from the bundle (coming from ChangePhotoDialog)
-     * @param bitmap
-     */
-   /* @Override
-    public void getBitmapImage(Bitmap bitmap) {
-        Log.d(TAG, "getBitmapImage: Got the Bitmap: " + bitmap);
-        //get the bitmap from 'ChangePhotoDialog'
-        if(bitmap != null) {
-            //compress the image (if you like)
-            ((StartHereActivity)getActivity()).compressBitmap(bitmap, 70);
-            mContactImage.setImageBitmap(bitmap);
-        }
-    }
-
-    @Override
-    public void getImagePath(String imagePath) {
-        Log.d(TAG, "getImagePath: Got the Image Path: " + imagePath);
-
-        if( !imagePath.equals("")){
-            imagePath = imagePath.replace(":/", "://");
-            mSelectedImagePath = imagePath;
-            UniversalImageLoader.setImage(imagePath, mContactImage, null, "");
-        }
-    }*/
 }

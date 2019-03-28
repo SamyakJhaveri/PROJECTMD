@@ -26,10 +26,6 @@ import android.widget.Toast;
 
 import com.example.projectmd.models.Contact;
 
-/**
- * Created by User on 6/12/2017.
- */
-
 
 public class EditContactFragment extends Fragment {
     private static final String TAG = "EditContactFragment";
@@ -77,7 +73,6 @@ public class EditContactFragment extends Fragment {
         mName.setTypeface(typeface);
         mOPDWardNumber.setTypeface(typeface);
 
-        ///mContactImage = (CircleImageView) view.findViewById(R.id.contactImage);
         mSelectForm1 = (Spinner) view.findViewById(R.id.selectForm1);
         mSelectForm2 = (Spinner) view.findViewById(R.id.selectForm2);
         mSelectForm3 = (Spinner) view.findViewById(R.id.selectForm3);
@@ -85,7 +80,6 @@ public class EditContactFragment extends Fragment {
         toolbar = (Toolbar) view.findViewById(R.id.editContactToolbar);
         Log.d(TAG, "onCreateView: Started.");
 
-        //mSelectedImagePath = null;
 
         //set the heading the for the toolbar
         TextView heading = (TextView) view.findViewById(R.id.textContactToolbar);
@@ -155,33 +149,6 @@ public class EditContactFragment extends Fragment {
             }
         });
 
-        // initiate the dialog box for choosing an image
-        /*ImageView ivCamera = (ImageView) view.findViewById(R.id.ivCamera);
-        ivCamera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                /*
-                Make sure all permissions have been verified before opening the dialog
-
-                for( int i = 0; i < Init.PERMISSIONS.length; i++){
-                    String[] permission = {Init.PERMISSIONS[i]};
-                    if(((StartHereActivity)getActivity()).checkPermission(permission)){
-                        if(i == Init.PERMISSIONS.length - 1){
-                            Log.d(TAG, "onClick: opening the 'image selection dialog box'.");
-                            ChangePhotoDialog dialog = new ChangePhotoDialog();
-                            dialog.show(getFragmentManager(), getString(R.string.change_photo_dialog));
-                            dialog.setTargetFragment(EditContactFragment.this, 0);
-                        }
-                    }else{
-                        ((StartHereActivity)getActivity()).verifyPermissions(permission);
-                    }
-                }
-
-
-            }
-        });*/
-
         return view;
     }
 
@@ -197,7 +164,6 @@ public class EditContactFragment extends Fragment {
         mOPDIRNumber.setText(mContact.getOpdirnumber());
         mName.setText(mContact.getName());
         mOPDWardNumber.setText(mContact.getOpdwardnumber());
-        //UniversalImageLoader.setImage(mContact.getProfileImage(), mContactImage, null, "");
 
         //Setting the selected form to the spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
@@ -271,35 +237,6 @@ public class EditContactFragment extends Fragment {
         }
     }
 
-    /**
-     * Retrieves the selected image from the bundle (coming from ChangePhotoDialog)
-     * @param bitmap
-     */
-    //@Override
-    /*public void getBitmapImage(Bitmap bitmap) {
-        Log.d(TAG, "getBitmapImage: Got the Bitmap: " + bitmap);
-        //get the bitmap from 'ChangePhotoDialog'
-        if(bitmap != null) {
-            //compress the image (if you like)
-            ((StartHereActivity)getActivity()).compressBitmap(bitmap, 70);
-            mContactImage.setImageBitmap(bitmap);
-        }
-    }
-
-    @Override
-    public void getImagePath(String imagePath) {
-        Log.d(TAG, "getImagePath: got the image path: " + imagePath);
-
-        if( !imagePath.equals("")){
-            imagePath = imagePath.replace(":/", "://");
-            mSelectedImagePath = imagePath;
-            UniversalImageLoader.setImage(imagePath, mContactImage, null, "");
-        }
-    }*/
-
-    /**
-     * Initialize the onTextChangeListener for formatting the phonenumber
-     */
     private void initOnTextChangeListener(){
 
         mOPDIRNumber.setOnKeyListener(new View.OnKeyListener() {
