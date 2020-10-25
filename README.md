@@ -1,8 +1,5 @@
 # Project, M.D.
 A speedy Android app system that efficiently delivers diagnostic information written by pathologists to their fellow doctors.
-
-# Project, M.D.
-A speedy Android app system that efficiently delivers diagnostic information written by pathologists to their fellow doctors.
 ## Table of Contents
 - [Introduction](#Introduction)
   - Problem
