@@ -1,9 +1,13 @@
 # Project, M.D.
 A speedy Android app system that efficiently delivers diagnostic information written by pathologists to their fellow doctors.
+
+# Project, M.D.
+A speedy Android app system that efficiently delivers diagnostic information written by pathologists to their fellow doctors.
 ## Table of Contents
 - [Introduction](#Introduction)
   - Problem
   - Aim
+  - Challenges
   - Approach
 - [Technologies Used](#Technologies-Used)
 - [Features](#Features)
@@ -24,6 +28,20 @@ What our **doctors in government hospitals need** is a speedy system that is **c
 
 We have attempted to build an **Android App** to digitize the process of a pathologist’s diagnosis of diseases so that the sensitive data is conveniently shareable. 
 It also makes microscopy easier and reduces the occupational hazard to the pathologists’ necks associated with long hours of peering through the microscope.
+
+[Back to Top](#table-of-contents)
+
+### Challenges
+-   It is difficult for pathologists to adjust and refocus their microscopes every time they have to make an observation of the slide. It would be easier for them to operate a image of the slide that they only need to take once and can use it to zoom-in zoom-out and embed it in the respective pdf form.
+    
+-   When pathologists see microscope slides, they note their observations and diagnostic hypothesis in special forms that are specific to that tissue-sample or requested lab test (Example, FNAC, Endocrine Test Request form, etc.)
+    
+-   Using paper to store and document this medical information is unreliable since paper can experience wear and tear and it would be very easy to tamper the data or lose the file altogether due to an organizing error or mismanagement.
+    
+-   To share this information conveniently and securely, it is necessary to digitize the process of disease diagnosis and sharing of important forms and reports amongs doctors.
+    
+-   Worked with pathologists to convert their tissue-sample specific forms into fillable PDFs and added the functionality of e-Signatures, slide image embedding, approval stamps, encryption, etc.
+
 
 [Back to Top](#table-of-contents)
 
